@@ -135,14 +135,14 @@
 \renewcommand{\appendixpagename}{Appendici}
 
 
-%\usepackage[style=italian]{csquotes}
-%\usepackage[%
-%style=philosophy-modern,
-%annotation=true,
-%hyperref,
-%backend=biber,
-%backref]{biblatex}
-%\addbibresource{formulario.bib}
+\usepackage[style=italian]{csquotes}
+\usepackage[%
+style=philosophy-modern,
+annotation=true,
+hyperref,
+backend=biber,
+backref]{biblatex}
+\addbibresource{probabilita.bib}
 \usepackage[italian]{varioref}
 \usepackage{hyperxmp}
 \usepackage[pdfpagelabels]{hyperref}
@@ -242,8 +242,8 @@ Release:\gitReln\ (\gitAbbrevHash)\ Autore:\gitAuthorName\
 \input{compilaTexStudioDue}			
 
 \nocite{*}
-% \addcontentsline{toc}{chapter}{\bibname}
-%\printbibliography
+ \addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
  \addcontentsline{toc}{chapter}{\indexname}
  \printindex
  \appendix
