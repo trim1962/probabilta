@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\begin{document}
+	\begin{tikzpicture}[nodes={draw, circle}, ->=triangle 45, thick]
+	
+\node{}
+child { node {3} 
+child { node {5} 
+child { node {9} }
+}
+child { node {9} 
+child { node {5} }
+}
+}
+ child [missing]
+child { node {5} 
+child { node {9}
+child { node {3}}
+}
+child { node {3}
+child { node {9}}
+}
+}
+ child [missing]
+child { node {9} 
+child { node {5}
+child { node {3}}
+}
+child { node {3}
+child { node {5}}
+}
+};
+
+	
+	\end{tikzpicture}
+\end{document}

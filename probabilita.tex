@@ -28,6 +28,8 @@
 
 %Teorema
 \theoremstyle{marginbreak}
+\theoremprework{\hrule\bigskip}
+\theorempostwork{\hrule\bigskip}
 \theoremheaderfont{\normalfont\bfseries}\theorembodyfont{\slshape}
 \theoremsymbol{\ensuremath{\diamondsuit}}
 \theoremseparator{:} %
@@ -53,7 +55,7 @@
 \theoremstyle{change}
 \theorembodyfont{\upshape}
 \theoremsymbol{\ensuremath{\ast}}
-\theoremseparator{}
+\theoremseparator{:}
 \newtheorem{exmp}{Esempio}[section]
 %controesempio
 \theoremstyle{change}
@@ -90,11 +92,7 @@
 \theorembodyfont{\normalfont}
 \newtheorem{proof}{Dimostrazione}
 %\input{../Mod_base/tabelle}
-
-
-
-%\usepackage{adjustbox}
-%\input{../Mod_base/stand_class}
+\usepackage{tabelle}
 \usepackage{pagina}
 
 \setlength{\headheight}{13pt}
@@ -105,7 +103,7 @@
 \usepackage{imakeidx}
 \makeindex[options=-s ../Mod_base/oldclaudio.sti]
 
-\usepackage{diagbox}
+%\usepackage{diagbox}
 %\include{simboli_operatori}
 
 \usepackage{stand_class}
@@ -207,6 +205,9 @@ baseurl={http://breviariomatematico.altervista.org}
 \makeatother
 %fine patch allieamento lista teoremi
 \usepackage{CDloghi}
+\newcommand{\scatola}[1]{\tikz[baseline=-.5ex]
+	\node[fill=white,rectangle,draw,minimum height=1.0cm,minimum width=1.0cm,inner sep=1pt,font=\sffamily] {#1};
+}
 \listfiles
 \begin{document}
 \begin{titlepage}
@@ -237,7 +238,7 @@ Release:\gitReln\ (\gitAbbrevHash)\ Autore:\gitAuthorName\
 	\addcontentsline{toc}{chapter}{\listfigurename}%
 		\listoffigures
 %	\addcontentsline{toc}{chapter}{\listtablename}%
-%			\listoftables
+		\listoftables
 			\mainmatter
 \input{compilaTexStudioDue}			
 

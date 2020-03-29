@@ -1,5 +1,86 @@
 \chapter{Calcolo combinatorio}
 \section{Permutazioni}
 \begin{defn}[Permutazioni semplici]
-Si dicono permutazioni di $n$ oggetti tutti gli insiemi di $n$ oggetti distinti. Consideriamo distinti due insiemi se differiscono per l'ordine con cui sono formati. Indicheremo con $P_n$ il numero di questi insiemi\index{Permutazioni!semplici}
+Si dicono permutazioni di $n$ oggetti distinti tutti gli insiemi di $n$ oggetti distinti. Consideriamo distinti due insiemi se differiscono per l'ordine con cui sono formati. Indicheremo con $P_n$ il numero di questi insiemi\index{Permutazioni!semplici}
 \end{defn}
+
+\begin{table}
+	\centering
+	\begin{tabular}{ccc}
+		$N$	& $P$ &$P_n$  \\
+		\toprule
+		1	&a  &1  \\
+		\midrule
+		2	&\begin{tabular}{cc}
+			ab	& ba   \\
+		\end{tabular} &2  \\
+		\midrule
+		3	&\begin{tabular}{cc}
+			abc	& bac   \\
+			acb	& bca   \\
+			cab	& aba   \\	
+		\end{tabular} &6  \\
+		\midrule
+		4	&\begin{tabular}{ccc}
+			abcd	& cabd &bacd  \\
+			abdc	& cadb &badc  \\		
+			adbc	& cdab &bdac  \\
+			dabc	& daab &daac  \\
+			acbd	& bacd &cbad  \\
+			acdb	& badc &cbda  \\
+			adcb	& bdac &cdba  \\
+			dacb	& dbac &dcba  \\
+		\end{tabular} &24  \\
+	\bottomrule
+	\end{tabular}
+	\caption{Permutazioni}
+	\label{tab:permutazioni}
+\end{table}
+\begin{figure}
+	\centering
+	\input{grafici/AlberoPermutaTre}
+	\caption{Albero permutazioni}
+	\label{fig:alberopermutatre}
+\end{figure}
+\begin{exmp}
+Dati tre numeri \numlist{3;5;9}, quali e quante sono le loro permutazioni? 
+\end{exmp}
+Consideriamo la~\vref{fig:alberopermutatre}. Come prima scelta possiamo utilizzare tre valori, al secondo livello possiamo scegliere tra due valori. Al terzo livello possiamo scegliere un solo valore. Quindi le permutazioni sono \numlist{359;395;593;539;953;935}.
+\begin{exmp}
+	Quali e quante sono le permutazioni di quattro elementi?
+\end{exmp}
+Come dimostra la~\vref{tab:permutazioni} con un elemento abbiamo una permutazione. Con due due. Con tre diventano sei e infine con quattro, abbiamo 24 permutazioni.
+\begin{thm}[Numero delle permutazioni]
+	Il numero delle permutazioni di $n$ oggetti è uguale a
+\[P_n=n\cdot (n-1)\cdot(n-2)\dots 2\cdot 1\]
+\end{thm}
+\begin{proof}
+Se abbiamo $n$ oggetti per calcolare $P_n$ possiamo procedere in questo modo. Supponiamo di avere $n$ scatole vuote tante quante sono gli oggetti.\par 
+\makebox[\linewidth]{\scatola{}\scatola{}\scatola{}\scatola{},\dots,\scatola{}}\par
+ All'inizio abbiamo $n$ oggetti quindi possiamo scegliere fra $n$ per inserirne uno nella prima\par 
+\makebox[\linewidth]{\scatola{n}\scatola{}\scatola{}\scatola{},\dots,\scatola{}}\par
+ Dopo questa scelta rimangono $n-1$ oggetti tra cui scegliere quindi avremo:\par 
+\makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{}\scatola{},\dots,\scatola{}}\par
+ Per la terza scatola restano $n-2$ oggetti. Quindi\par 
+\makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{},\dots,\scatola{}}\par
+ Per la quarta $n-3$ etc.\par \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{n-3},\dots,\scatola{}}\par Per l'ultima scatola resta una sola scelta. \par \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{n-3},\dots,\scatola{1}}\par Quindi \[P_n=n\cdot (n-1)\cdot(n-2)\dots 2\cdot 1\]
+\end{proof}
+\begin{defn}[Fattoriale]
+	Dato un numero naturale, diremo fattoriale di un numero e indicato con $n!$ il numero:
+	\begin{align*}
+	n!=&n\cdot(n-1)\cdot (n-2),\dots,2\cdot 1\\
+	0!=&1\\
+	1!=&1
+	\end{align*}
+\end{defn}\index{Fattoriale}
+\section{Disposizioni semplici}
+\begin{defn}[Disposizioni semplici]
+Diremo disposizioni semplici di $n$ oggetti distinti a gruppi di $k$ ($ k\leqslant n$), tutti i raggruppamenti di $k$ oggetti tali che ogni gruppo differisce o per l'ordine o per almeno un oggetto.
+\end{defn}\index{Disposizioni!semplici}
+% TODO: \usepackage{graphicx} required
+\begin{figure}
+	\centering
+	\includestandalone{grafici/DispSemplici}
+	\caption{Disposizioni semplici}
+	\label{fig:dispsemplici}
+\end{figure}
