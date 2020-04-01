@@ -94,7 +94,21 @@
 %\input{../Mod_base/tabelle}
 \usepackage{tabelle}
 \usepackage{pagina}
+\usepackage[acronyms,translate=false,nonumberlist,toc,numberedsection,counter=chapter,automake]{glossaries-extra}
+%\glossariesextrasetup{indexcrossrefs=true}
+\usepackage{glossary-mcols}
+\usepackage{glossary-longragged}
+\usepackage{glossaries-babel}
+\makeglossaries
+\renewcommand*{\glsxtrpostdescgeneral}{%
+	\ifglshasfield{see}{\glscurrententrylabel}
+	{, \glsxtrusesee{\glscurrententrylabel}}%
+	{}%
+}
 
+\setglossarystyle{altlistgroup}
+\loadglsentries{glossario}
+\loadglsentries{acronym}
 \setlength{\headheight}{13pt}
 \usepackage{indice}
 \usepackage{date}
@@ -108,7 +122,7 @@
 
 \usepackage{stand_class}
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
 
 
  \makeatletter
@@ -209,7 +223,9 @@ baseurl={http://breviariomatematico.altervista.org}
 	\node[fill=white,rectangle,draw,minimum height=1.0cm,minimum width=1.0cm,inner sep=1pt,font=\sffamily] {#1};
 }
 \listfiles
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \begin{document}
+\frontmatter
 \begin{titlepage}
 \begin{center}	
 	\Lgrandedue\\[1cm]    
@@ -221,7 +237,7 @@ baseurl={http://breviariomatematico.altervista.org}
 \HRule \\
 \vfill
 	% Bottom of the page
-	\polylogo[5.5]{9}		
+	\polylogo[5.5]{20}		
 		{\large $-$\DTMnow$-$}	
 \end{center}
 {\centering
@@ -240,14 +256,21 @@ Release:\gitReln\ (\gitAbbrevHash)\ Autore:\gitAuthorName\
 %	\addcontentsline{toc}{chapter}{\listtablename}%
 		\listoftables
 			\mainmatter
-\input{compilaTexStudioDue}			
-
+\input{compilaTexStudioDue}	
+  \glsaddall	
+%\twocolumn
+% \addcontentsline{toc}{chapter}{Glossari}
+\printglossaries
+\backmatter	
+ \appendix
 \nocite{*}
  \addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
  \addcontentsline{toc}{chapter}{\indexname}
  \printindex
- \appendix
+
+
+
  \chapter{Mezzi usati}
  \CDMezziUsati
 \end{document}

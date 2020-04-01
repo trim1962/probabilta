@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\begin{document}
+	\begin{tikzpicture}[nodes={draw,  circle}, ->=triangle 45, thick,
+	grow=right,
+	label distance = 0.2cm,
+	level 1/.style = {level distance=1.0cm, sibling distance=2cm},
+	level 2/.style = {level distance=1.0cm, sibling distance=4cm},
+	level 3/.style = {level distance=1.0cm, sibling distance=1cm},
+	]
+	
+\node[label=90:{k=0}]{}
+child { node {e}
+child { node {d}}
+child { node {c}}
+child { node {b}}
+child { node {a}}
+}
+child { node {d}
+child { node {e}}
+child { node {c}}
+child { node {b}}
+child { node {a}}
+}
+child { node {c}
+child { node {e}}
+child { node {d}}
+child { node {b}}
+child { node {a}}
+}
+child { node {b}
+child { node {e}}
+child { node {d}}
+child { node {c}}
+child { node {a}}
+}
+child { node[label=90:{k=1}] {a}
+child { node {e}}
+child { node {d}}
+child { node {c}
+child { node {e}}
+child { node {d}}
+child { node {b}
+}
+}
+child { node[label=90:{k=2}] {b}
+child { node {e}}
+child { node {d}}
+child { node[label=90:{k=3}] {c}}
+}
+};
+
+	
+	\end{tikzpicture}
+\end{document}

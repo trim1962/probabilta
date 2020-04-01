@@ -1,9 +1,17 @@
 \chapter{Calcolo combinatorio}
 \section{Permutazioni}
+\begin{defn}[Fattoriale]
+	Dato un numero naturale, diremo fattoriale di un numero e indicato con $n!$ il numero:
+	\begin{align*}
+	n!=&n\cdot(n-1)\cdot (n-2),\dots,2\cdot 1\\
+	0!=&1\\
+	1!=&1
+	\end{align*}
+\end{defn}\index{Fattoriale}
+Quando disponiamo degli oggetti in gruppi è importante distinguere in vari casi. Importa l'ordine con cui operiamo? Vi sono ripetizioni? Tutto questo dipende dalle situazioni. Se giochiamo a tombola no ma se pensiamo a come sono fatte le targhe di un'auto si. Iniziamo da problemi di ordine.
 \begin{defn}[Permutazioni semplici]
-Si dicono permutazioni di $n$ oggetti distinti tutti gli insiemi di $n$ oggetti distinti. Consideriamo distinti due insiemi se differiscono per l'ordine con cui sono formati. Indicheremo con $P_n$ il numero di questi insiemi\index{Permutazioni!semplici}
+Si dicono permutazioni di $n$ oggetti distinti tutti gli insiemi di $n$ oggetti distinti. Consideriamo distinti due insiemi se differiscono per l'ordine con cui sono formati. Indicheremo con $P_n$ il numero di questi insiemi.\index{Permutazioni!semplici}
 \end{defn}
-
 \begin{table}
 	\centering
 	\begin{tabular}{ccc}
@@ -65,19 +73,10 @@ Se abbiamo $n$ oggetti per calcolare $P_n$ possiamo procedere in questo modo. Su
 \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{},\dots,\scatola{}}\par
  Per la quarta $n-3$ etc.\par \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{n-3},\dots,\scatola{}}\par Per l'ultima scatola resta una sola scelta. \par \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{n-3},\dots,\scatola{1}}\par Quindi \[P_n=n\cdot (n-1)\cdot(n-2)\dots 2\cdot 1\]
 \end{proof}
-\begin{defn}[Fattoriale]
-	Dato un numero naturale, diremo fattoriale di un numero e indicato con $n!$ il numero:
-	\begin{align*}
-	n!=&n\cdot(n-1)\cdot (n-2),\dots,2\cdot 1\\
-	0!=&1\\
-	1!=&1
-	\end{align*}
-\end{defn}\index{Fattoriale}
 \section{Disposizioni semplici}
 \begin{defn}[Disposizioni semplici]
-Diremo disposizioni semplici di $n$ oggetti distinti a gruppi di $k$ ($ k\leqslant n$), tutti i raggruppamenti di $k$ oggetti tali che ogni gruppo differisce o per l'ordine o per almeno un oggetto.
+Diremo disposizioni semplici di $n$ oggetti distinti a gruppi di $k$ ($ k\leqslant n$), tutti i raggruppamenti di $k$ oggetti tali che ogni gruppo differisce o per l'ordine o per almeno un oggetto. Indicheremo con $D_{n,k}$ il numero di queste disposizioni.
 \end{defn}\index{Disposizioni!semplici}
-% TODO: \usepackage{graphicx} required
 \begin{figure}
 	\centering
 	\includestandalone{grafici/DispSemplici}
