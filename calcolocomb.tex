@@ -83,3 +83,23 @@ Diremo disposizioni semplici di $n$ oggetti distinti a gruppi di $k$ ($ k\leqsla
 	\caption{Disposizioni semplici}
 	\label{fig:dispsemplici}
 \end{figure}
+\begin{thm}[Numero delle disposizioni]
+	Il numero delle disposizioni semplici di $n$ oggetti a gruppi di $k$ $(k\leqslant n)$ è uguale a
+	\[D_{n,k}=n(n-2)(n-3)\dots(n-k+1)=\dfrac{n!}{(n-k)!}\]
+\end{thm}\index{Disposizioni!semplici}
+\begin{proof}
+	Se abbiamo $n$ oggetti per calcolare $D_{n,k}$  possiamo procedere in questo modo. Supponiamo di avere $k$ scatole vuote.\par 
+	\makebox[\linewidth]{\scatola{}\scatola{}\scatola{}\scatola{},\dots,\scatola{}}\par
+	All'inizio abbiamo $n$ oggetti quindi possiamo sceglierne $n$ per inserirne uno nella prima scatola\par 
+	\makebox[\linewidth]{\scatola{n}\scatola{}\scatola{}\scatola{},\dots,\scatola{}}\par
+	Dopo questa scelta rimangono $n-1$ oggetti tra cui scegliere quindi avremo:\par 
+	\makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{}\scatola{},\dots,\scatola{}}\par
+	Per la terza scatola restano $n-2$ oggetti. Quindi\par 
+	\makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{},\dots,\scatola{}}\par
+	Per la quarta $n-3$ etc.\par \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{n-3},\dots,\scatola{}}\par Per l'ultima scatola restano $n-k+1$ oggetti  quindi \par \makebox[\linewidth]{\scatola{n}\scatola{n-1}\scatola{n-2}\scatola{n-3},\dots,\scatola{n-k+1}}\par Quindi \[D_{n,k}=n(n-2)(n-3)\dots(n-k+1)=\dfrac{n!}{(n-k)!}\]
+	\begin{align*}
+	D_{n,k}=&n(n-2)(n-3)\dots(n-k+1)\\
+	=&\dfrac{n(n-2)(n-3)\dots(n-k+1)(n-k)\dots 2\cdot 1}{(n-k)!}\\
+	=&\dfrac{n!}{(n-k)!}
+	\end{align*}
+\end{proof}
