@@ -88,7 +88,7 @@ Diremo disposizioni semplici di $n$ oggetti distinti a gruppi di $k$ ($ k\leqsla
 	\[D_{n,k}=n(n-2)(n-3)\dots(n-k+1)=\dfrac{n!}{(n-k)!}\]
 \end{thm}\index{Disposizioni!semplici}
 \begin{proof}
-	Se abbiamo $n$ oggetti per calcolare $D_{n,k}$  possiamo procedere in questo modo. Supponiamo di avere $k$ scatole vuote.\par 
+	Se abbiamo $n$ elementi, per calcolare le $D_{n,k}$  procediamo in questo modo. Supponiamo di avere $k$ scatole vuote.\par 
 	\makebox[\linewidth]{\scatola{}\scatola{}\scatola{}\scatola{},\dots,\scatola{}}\par
 	All'inizio abbiamo $n$ oggetti quindi possiamo sceglierne $n$ per inserirne uno nella prima scatola\par 
 	\makebox[\linewidth]{\scatola{n}\scatola{}\scatola{}\scatola{},\dots,\scatola{}}\par
@@ -102,4 +102,11 @@ Diremo disposizioni semplici di $n$ oggetti distinti a gruppi di $k$ ($ k\leqsla
 	=&\dfrac{n(n-2)(n-3)\dots(n-k+1)(n-k)\dots 2\cdot 1}{(n-k)!}\\
 	=&\dfrac{n!}{(n-k)!}
 	\end{align*}
+	Come volevasi dimostrare
 \end{proof}
+\begin{exmp}
+	Dati quattro oggetti distinti $\lbrace a,b,c,d \rbrace$ quante e quali sono le disposizioni semplici di quattro elementi a gruppi di due? 
+\end{exmp}
+Per risolvere basta considerare~\vref{fig:dispsemplici}. L'albero mostra tutte le possibili disposizioni di quattro elementi prima in gruppi di uno poi in gruppi di due.
+\section{Disposizioni con ripetizione} 
+
